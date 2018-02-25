@@ -1,0 +1,54 @@
+$color1: #63ccff;
+$color2: #039be5;
+$color3: #006db3;
+$font: sans-serif;
+
+body {
+	background-color: $color1;
+	//background-image: 'media/background1.jpg';
+	//background-image: url('../../media/background1.jpg');
+	background-image: url('%backgroundUri%');
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+	font-family: $font;
+	#contentMenu {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 200px;
+		nav {
+			width: 100%;
+			background-color: #fff;
+			ul {
+				padding: 0;
+				margin: 0;
+				li{
+					padding: 2% 1%;
+					border: 1px solid $color3;
+					border-width: 1px 0 1px 0;
+					color: $color3;
+					list-style: none;
+				}
+				li:hover {
+					background-color: $color3;
+					color: #fff;
+				}
+			}
+		}
+	}
+	#modal {
+		display: none;;
+		position: absolute;
+		top: 20vh;
+		left: 45vw;
+		width: 20vw;
+		background-color: white;
+	}
+	.shadow {
+		box-shadow: 5px 5px 5px;
+	}
+}
