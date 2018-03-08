@@ -2,6 +2,9 @@
 /*librerias*/
 var EventClient = require('./../../../commonModules/localEvent').Client;
 var $ = require('./../../../commonModules/jquery');
+var Whatch =  require('./../../../commonModules/watcher');
+var mainScope = {};
+var mainScopeWatch = new Whatch(mainScope);
 /*variables globales*/
 var body = $('body'),
 	input = $('input'),
@@ -14,7 +17,8 @@ var body = $('body'),
 var external = {}
 
 external.changeImg = (args) => {
-	console.log(args)
+	if (args)
+	body.css('background-image', `url(${args})`);
 };
 
 /*metodos locales*/
@@ -31,7 +35,8 @@ var openModal = () => {
 	/*
 	 *Función encargada de mostrar el modal en la pantalla
 	*/
-	modal.css("display", "block");
+	console.log("vamos a llamar a la app")
+	comunication.send('openApps', 'changeImg', ['fileSystem', 'selectFile']);
 };
 
 
@@ -48,7 +53,7 @@ var cliked = (e) => {
 	return (e.which === 1) ? menu.removeAttr('style') : (e.which === 3) ? openMenu(x, y) : null;
 };
 var changeImg = ()=>{	
-	comunication.send('changeImg', 'changeImg', '')
+	console.log("aquí no!")
 }
 /*control de eventos*/
 body.on('mousedown', cliked);
