@@ -29,13 +29,11 @@ var openMenu = (x, y) => {
 	 *int x, y -> Las coordenadas que en que se tiene que crear
 	*/	
 	menu.css({"display": "block", "top": `${y}px`, "left": `${x}px`});
-	//comunication.send('changeImg', 'changeImg', )
 };
 var openModal = () => {
 	/*
 	 *Función encargada de mostrar el modal en la pantalla
-	*/
-	console.log("vamos a llamar a la app")
+	*/	
 	comunication.send('openApps', 'changeImg', ['fileSystem', 'selectFile']);
 };
 
