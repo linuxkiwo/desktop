@@ -34,7 +34,7 @@ var openModal = () => {
 	/*
 	 *Función encargada de mostrar el modal en la pantalla
 	*/	
-	comunication.send('openApps', 'changeImg', ['fileSystem', 'selectFile']);
+	comunication.send('openApps', 'changeImg', ['fileSystem', 'selectfile']);
 };
 
 

@@ -21,7 +21,8 @@ var external = {};
 external.openApps =  (args) => {
 	var response,
 		action;
-	let p = exec(`electron ${appsPath}${args[0]} ${args[1]}`, (err, stdout, stderr) => {			
+	let p = exec(`electron ${appsPath}${args[0]} ${args[1]}`, (err, stdout, stderr) => {
+		
 		response = JSON.parse(stdout);
 		action = toChange(response);		
 		updatebackgroundImg();
